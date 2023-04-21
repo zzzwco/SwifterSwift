@@ -33,6 +33,20 @@ public extension CGFloat {
         return Foundation.floor(self)
     }
     #endif
+  
+    #if canImport(UIKit)
+    /// SwifterSwift: Calculates the proportional width based on a reference width.
+    /// - Parameter referenceWidth: The width to which the proportion is calculated. Default is 375.
+    func proportionalWidth(_ referenceWidth: CGFloat = 375.0) -> CGFloat {
+      return UIScreen.width * self / referenceWidth
+    }
+    
+    /// SwifterSwift: Calculates the proportional height based on a reference height.
+    /// - Parameter referenceHeight: The height to which the proportion is calculated. Default is 812.
+    func proportionalHeight(_ referenceHeight: CGFloat = 812.0) -> CGFloat {
+      return UIScreen.height * self / referenceHeight
+    }
+    #endif
 
     /// SwifterSwift: Check if CGFloat is positive.
     var isPositive: Bool {
